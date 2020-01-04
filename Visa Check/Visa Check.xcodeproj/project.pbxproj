@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37290AAC23BF30B80020169A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37290AAB23BF30B80020169A /* Country.swift */; };
+		37290AB223BF37850020169A /* 128-around-the-world.json in Resources */ = {isa = PBXBuildFile; fileRef = 37290AB123BF37850020169A /* 128-around-the-world.json */; };
+		37290AB423BF53A90020169A /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37290AB323BF53A90020169A /* Converter.swift */; };
+		37290AB623BF53EA0020169A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37290AB523BF53EA0020169A /* GoogleService-Info.plist */; };
+		373003CA23B7A6B4007A4473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373003C923B7A6B4007A4473 /* AppDelegate.swift */; };
+		373003CC23B7A6B4007A4473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373003CB23B7A6B4007A4473 /* SceneDelegate.swift */; };
+		373003CE23B7A6B4007A4473 /* ChooseCountryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373003CD23B7A6B4007A4473 /* ChooseCountryVC.swift */; };
+		373003D123B7A6B4007A4473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373003CF23B7A6B4007A4473 /* Main.storyboard */; };
+		373003D423B7A6B4007A4473 /* Visa_Check.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 373003D223B7A6B4007A4473 /* Visa_Check.xcdatamodeld */; };
+		373003D623B7A6B5007A4473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373003D523B7A6B5007A4473 /* Assets.xcassets */; };
+		373003D923B7A6B5007A4473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373003D723B7A6B5007A4473 /* LaunchScreen.storyboard */; };
+		373003E123B7A7CA007A4473 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373003E023B7A7CA007A4473 /* Data+Ext.swift */; };
+		654CF84DFA5887AB41B17B25 /* Pods_Visa_Check.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FAB996B25EC0D99229D1A8 /* Pods_Visa_Check.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03D3E98EA8A75188A2B5AB91 /* Pods-Visa Check.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visa Check.release.xcconfig"; path = "Target Support Files/Pods-Visa Check/Pods-Visa Check.release.xcconfig"; sourceTree = "<group>"; };
+		27FAB996B25EC0D99229D1A8 /* Pods_Visa_Check.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visa_Check.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37290AAB23BF30B80020169A /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		37290AB123BF37850020169A /* 128-around-the-world.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "128-around-the-world.json"; sourceTree = "<group>"; };
+		37290AB323BF53A90020169A /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		37290AB523BF53EA0020169A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		373003C623B7A6B4007A4473 /* Visa Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Visa Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		373003C923B7A6B4007A4473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		373003CB23B7A6B4007A4473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		373003CD23B7A6B4007A4473 /* ChooseCountryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCountryVC.swift; sourceTree = "<group>"; };
+		373003D023B7A6B4007A4473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		373003D323B7A6B4007A4473 /* Visa_Check.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Visa_Check.xcdatamodel; sourceTree = "<group>"; };
+		373003D523B7A6B5007A4473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		373003D823B7A6B5007A4473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		373003DA23B7A6B5007A4473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		373003E023B7A7CA007A4473 /* Data+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
+		B1C25A89EAB842DC21F9C7F6 /* Pods-Visa Check.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visa Check.debug.xcconfig"; path = "Target Support Files/Pods-Visa Check/Pods-Visa Check.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		373003C323B7A6B4007A4473 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				654CF84DFA5887AB41B17B25 /* Pods_Visa_Check.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		373003BD23B7A6B4007A4473 = {
+			isa = PBXGroup;
+			children = (
+				373003C823B7A6B4007A4473 /* Visa Check */,
+				373003C723B7A6B4007A4473 /* Products */,
+				DFEAD1200C74BDE86FEE3928 /* Pods */,
+				64587E1C23F7274BEF0F80F2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		373003C723B7A6B4007A4473 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				373003C623B7A6B4007A4473 /* Visa Check.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		373003C823B7A6B4007A4473 /* Visa Check */ = {
+			isa = PBXGroup;
+			children = (
+				37290AB123BF37850020169A /* 128-around-the-world.json */,
+				373003E423BD2E7E007A4473 /* Services */,
+				373003EB23BD2EC0007A4473 /* AppDelegate */,
+				373003EA23BD2EB4007A4473 /* Extensions */,
+				373003E923BD2EAD007A4473 /* Model */,
+				373003E823BD2EA8007A4473 /* View */,
+				373003E723BD2E9C007A4473 /* Controller */,
+				373003E523BD2E8A007A4473 /* Storyboards */,
+				373003E623BD2E94007A4473 /* Resources */,
+				373003DA23B7A6B5007A4473 /* Info.plist */,
+				37290AB523BF53EA0020169A /* GoogleService-Info.plist */,
+			);
+			path = "Visa Check";
+			sourceTree = "<group>";
+		};
+		373003E423BD2E7E007A4473 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				37290AB323BF53A90020169A /* Converter.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		373003E523BD2E8A007A4473 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				373003CF23B7A6B4007A4473 /* Main.storyboard */,
+				373003D723B7A6B5007A4473 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		373003E623BD2E94007A4473 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				373003D523B7A6B5007A4473 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		373003E723BD2E9C007A4473 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				373003CD23B7A6B4007A4473 /* ChooseCountryVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		373003E823BD2EA8007A4473 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		373003E923BD2EAD007A4473 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				373003D223B7A6B4007A4473 /* Visa_Check.xcdatamodeld */,
+				37290AAB23BF30B80020169A /* Country.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		373003EA23BD2EB4007A4473 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				373003E023B7A7CA007A4473 /* Data+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		373003EB23BD2EC0007A4473 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				373003C923B7A6B4007A4473 /* AppDelegate.swift */,
+				373003CB23B7A6B4007A4473 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		64587E1C23F7274BEF0F80F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27FAB996B25EC0D99229D1A8 /* Pods_Visa_Check.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFEAD1200C74BDE86FEE3928 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1C25A89EAB842DC21F9C7F6 /* Pods-Visa Check.debug.xcconfig */,
+				03D3E98EA8A75188A2B5AB91 /* Pods-Visa Check.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		373003C523B7A6B4007A4473 /* Visa Check */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 373003DD23B7A6B5007A4473 /* Build configuration list for PBXNativeTarget "Visa Check" */;
+			buildPhases = (
+				57DD9C4E9E41CDF65344C38B /* [CP] Check Pods Manifest.lock */,
+				373003C223B7A6B4007A4473 /* Sources */,
+				373003C323B7A6B4007A4473 /* Frameworks */,
+				373003C423B7A6B4007A4473 /* Resources */,
+				4C31159E6CF84E28B3CD9EA3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Visa Check";
+			productName = "Visa Check";
+			productReference = 373003C623B7A6B4007A4473 /* Visa Check.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		373003BE23B7A6B4007A4473 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Денис Андриевский";
+				TargetAttributes = {
+					373003C523B7A6B4007A4473 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 373003C123B7A6B4007A4473 /* Build configuration list for PBXProject "Visa Check" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 373003BD23B7A6B4007A4473;
+			productRefGroup = 373003C723B7A6B4007A4473 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				373003C523B7A6B4007A4473 /* Visa Check */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		373003C423B7A6B4007A4473 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				373003D923B7A6B5007A4473 /* LaunchScreen.storyboard in Resources */,
+				37290AB223BF37850020169A /* 128-around-the-world.json in Resources */,
+				37290AB623BF53EA0020169A /* GoogleService-Info.plist in Resources */,
+				373003D623B7A6B5007A4473 /* Assets.xcassets in Resources */,
+				373003D123B7A6B4007A4473 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C31159E6CF84E28B3CD9EA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Visa Check/Pods-Visa Check-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Visa Check/Pods-Visa Check-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Visa Check/Pods-Visa Check-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57DD9C4E9E41CDF65344C38B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Visa Check-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		373003C223B7A6B4007A4473 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				373003CE23B7A6B4007A4473 /* ChooseCountryVC.swift in Sources */,
+				373003E123B7A7CA007A4473 /* Data+Ext.swift in Sources */,
+				373003CA23B7A6B4007A4473 /* AppDelegate.swift in Sources */,
+				37290AB423BF53A90020169A /* Converter.swift in Sources */,
+				373003CC23B7A6B4007A4473 /* SceneDelegate.swift in Sources */,
+				37290AAC23BF30B80020169A /* Country.swift in Sources */,
+				373003D423B7A6B4007A4473 /* Visa_Check.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		373003CF23B7A6B4007A4473 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				373003D023B7A6B4007A4473 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		373003D723B7A6B5007A4473 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				373003D823B7A6B5007A4473 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		373003DB23B7A6B5007A4473 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		373003DC23B7A6B5007A4473 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		373003DE23B7A6B5007A4473 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1C25A89EAB842DC21F9C7F6 /* Pods-Visa Check.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 452BPWXS55;
+				INFOPLIST_FILE = "Visa Check/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.den444ick.Visa-Check";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		373003DF23B7A6B5007A4473 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03D3E98EA8A75188A2B5AB91 /* Pods-Visa Check.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 452BPWXS55;
+				INFOPLIST_FILE = "Visa Check/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.den444ick.Visa-Check";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		373003C123B7A6B4007A4473 /* Build configuration list for PBXProject "Visa Check" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				373003DB23B7A6B5007A4473 /* Debug */,
+				373003DC23B7A6B5007A4473 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		373003DD23B7A6B5007A4473 /* Build configuration list for PBXNativeTarget "Visa Check" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				373003DE23B7A6B5007A4473 /* Debug */,
+				373003DF23B7A6B5007A4473 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		373003D223B7A6B4007A4473 /* Visa_Check.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				373003D323B7A6B4007A4473 /* Visa_Check.xcdatamodel */,
+			);
+			currentVersion = 373003D323B7A6B4007A4473 /* Visa_Check.xcdatamodel */;
+			path = Visa_Check.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 373003BE23B7A6B4007A4473 /* Project object */;
+}
