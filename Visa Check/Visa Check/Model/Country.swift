@@ -1,11 +1,3 @@
-//
-//  Country.swift
-//  Visa Check
-//
-//  Created by Денис Андриевский on 1/3/20.
-//  Copyright © 2020 Денис Андриевский. All rights reserved.
-//
-
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
@@ -13,8 +5,9 @@
 
 import Foundation
 
-// MARK: - Country
+// MARK: - CountryElement
 struct Country: Codable {
+
     var visaRequirements: [VisaRequirement]
 }
 
@@ -38,12 +31,12 @@ struct NCountry: Codable {
     var developmentStatus: DevelopmentStatus
     var languageCodes, languageNames: String
     var countryVisaRanking: CountryVisaRanking?
-    var createdAt, updatedAt: Date
     var visaProcessingURL: String?
+    var createdAt, updatedAt: Date
     var countryTemperature: CountryTemperature?
     var travelAdvice: TravelAdvice?
     var visaSlug: String?
-    var parentCountryID, visaSchemeID: Int?
+    var visaSchemeID, parentCountryID: Int?
     var currencySymbol: String?
 
     enum CodingKeys: String, CodingKey {
@@ -51,11 +44,11 @@ struct NCountry: Codable {
         case imageURL = "imageUrl"
         case capital
         case isdCode = "ISDCode"
-        case currencyName, currencyCode, region, subregion, population, lat, lng, city, cityLat, cityLng, area, nearbyCountrySlugs, timeZones, formalName, isIndependent, developmentStatus, languageCodes, languageNames, countryVisaRanking, createdAt, updatedAt
+        case currencyName, currencyCode, region, subregion, population, lat, lng, city, cityLat, cityLng, area, nearbyCountrySlugs, timeZones, formalName, isIndependent, developmentStatus, languageCodes, languageNames, countryVisaRanking
         case visaProcessingURL = "visaProcessingUrl"
-        case countryTemperature, travelAdvice, visaSlug
-        case parentCountryID = "parentCountryId"
+        case createdAt, updatedAt, countryTemperature, travelAdvice, visaSlug
         case visaSchemeID = "visaSchemeId"
+        case parentCountryID = "parentCountryId"
         case currencySymbol
     }
 }
@@ -168,6 +161,7 @@ struct TravelAdvice: Codable {
 
 enum AdviceDescription: String, Codable {
     case doNotTravel = "Do not travel"
+    case exerciseAHighDegreeOfCaution = "Exercise a high degree of caution"
     case exerciseNormalSafetyPrecautions = "Exercise normal safety precautions"
     case highDegreeOfCaution = "High degree of caution"
     case reconsiderYourNeedToTravel = "Reconsider your need to travel"
@@ -318,6 +312,7 @@ enum VisaName: String, Codable {
     case visaRequired = "Visa required"
     case visitorSPermitOnArrival = "Visitor's Permit on arrival"
 }
+
 
 // MARK: - Encode/decode helpers
 

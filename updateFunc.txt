@@ -1,0 +1,21 @@
+func update(forCountry country: String) {
+        let urlString = "https://visalist.io/api/public/visa_requirements/country/\(country)"
+            if let url = URL(string: urlString) {
+            
+                let session = URLSession(configuration: .default)
+                let task = session.dataTask(with: url) { (data, response, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else if let data = data {
+                        
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .iso8601
+                        let parsedData = try! decoder.decode(Country.self, from: data)
+                        self.ref = Database.database().reference()
+                        self.ref.child(country).setValue(self.converter.encode(country: parsedData))
+                    }
+                }
+                task.resume()
+            }
+        
+    }

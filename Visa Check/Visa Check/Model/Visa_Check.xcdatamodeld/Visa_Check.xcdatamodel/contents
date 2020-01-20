@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CountryMO" representedClassName="CountryMO" syncable="YES">
+        <attribute name="destinationCountryAlpha2Code" attributeType="String"/>
+        <attribute name="destinationCountryAlpha3Code" attributeType="String"/>
+        <attribute name="destinationCountryArea" attributeType="String"/>
+        <attribute name="destinationCountryCapital" optional="YES" attributeType="String"/>
+        <attribute name="destinationCountryCity" optional="YES" attributeType="String"/>
+        <attribute name="destinationCountryCityLat" attributeType="String"/>
+        <attribute name="destinationCountryCityLng" attributeType="String"/>
+        <attribute name="destinationCountryCurrencyCode" attributeType="String"/>
+        <attribute name="destinationCountryCurrencyName" attributeType="String"/>
+        <attribute name="destinationCountryDevelopmentStatus" attributeType="String"/>
+        <attribute name="destinationCountryFormalName" optional="YES" attributeType="String"/>
+        <attribute name="destinationCountryId" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="destinationCountryID" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="destinationCountryImageURL" attributeType="String"/>
+        <attribute name="destinationCountryIsdCode" optional="YES" attributeType="String"/>
+        <attribute name="destinationCountryIsIndependent" attributeType="String"/>
+        <attribute name="destinationCountryLanguageCodes" attributeType="String"/>
+        <attribute name="destinationCountryLanguageNames" attributeType="String"/>
+        <attribute name="destinationCountryLat" attributeType="String"/>
+        <attribute name="destinationCountryLng" attributeType="String"/>
+        <attribute name="destinationCountryName" attributeType="String"/>
+        <attribute name="destinationCountryNationality" attributeType="String"/>
+        <attribute name="destinationCountryNationalitySlug" attributeType="String"/>
+        <attribute name="destinationCountryNearbyCountrySlugs" attributeType="String"/>
+        <attribute name="destinationCountryNumericCode" optional="YES" attributeType="String"/>
+        <attribute name="destinationCountryPopulation" attributeType="String"/>
+        <attribute name="destinationCountryRegion" attributeType="String"/>
+        <attribute name="destinationCountrySlug" attributeType="String"/>
+        <attribute name="destinationCountrySubregion" attributeType="String"/>
+        <attribute name="destinationCountryTimeZones" attributeType="String"/>
+        <attribute name="id" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="originCountryID" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="CountryMO" positionX="-63" positionY="-18" width="128" height="523"/>
+    </elements>
 </model>

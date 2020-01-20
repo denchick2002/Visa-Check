@@ -15,7 +15,7 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var dimmView: UIView!
     @IBOutlet weak var lottieView: UIView!
-    let animationView = AnimationView()
+    private let animationView = AnimationView()
     @IBOutlet weak var insertLabel: UILabel!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTextField: SearchTextField!
@@ -25,11 +25,10 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var submitBtnLeadinngConstraint: NSLayoutConstraint!
     private let converter = Converter()
     private var ref: DatabaseReference!
+    private var dataBase: Country!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        update(forCountry: "ukraine")
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
@@ -40,43 +39,48 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
         submitBtn.layer.cornerRadius = 10.0
         submitBtnLeadinngConstraint.constant = 118*(view.frame.size.width/375)
         submitBtnTrailingConstraint.constant = 118*(view.frame.size.width/375)
+        submitBtn.titleLabel?.adjustsFontSizeToFitWidth = true
+        submitBtn.titleLabel?.minimumScaleFactor = 0.3
         
         // MARK:- Configuring autocompletable textField
         searchTextField.delegate = self
-        searchTextField.filterStrings(["Ukraine 🇺🇦", "Russia 🇷🇺", "Belarus 🇧🇾"])
+        let filterStrings = ["Ukraine 🇺🇦", "Russia 🇷🇺", "Belarus 🇧🇾", "Украина 🇺🇦", "Россия 🇷🇺", "Беларусь 🇧🇾", "Україна 🇺🇦", "Росія 🇷🇺", "Білорусь 🇧🇾"]
+        searchTextField.filterStrings(filterStrings)
         searchTextField.maxResultsListHeight = 200
         searchTextField.theme.cellHeight = 50
         searchTextField.theme.font = UIFont.systemFont(ofSize: 18)
         
         if #available(iOS 12.0, *), traitCollection.userInterfaceStyle == .dark {
             searchTextField.theme = .darkTheme()
-            searchTextField.filterStrings(["Ukraine 🇺🇦", "Russia 🇷🇺", "Belarus 🇧🇾"])
+            searchTextField.filterStrings(filterStrings)
             searchTextField.maxResultsListHeight = 200
             searchTextField.theme.cellHeight = 50
             searchTextField.theme.font = UIFont.systemFont(ofSize: 18)
         }
+        
+        
     }
     
-    func update(forCountry country: String) {
-        let urlString = "https://visalist.io/api/public/visa_requirements/country/\(country)"
-            if let url = URL(string: urlString) {
-            
-                let session = URLSession(configuration: .default)
-                let task = session.dataTask(with: url) { (data, response, error) in
-                    if let error = error {
-                        print(error.localizedDescription)
-                    } else if let data = data {
-                        
-                        let decoder = JSONDecoder()
-                        decoder.dateDecodingStrategy = .iso8601
-                        let parsedData = try! decoder.decode(Country.self, from: data)
-                        self.ref = Database.database().reference()
-                        self.ref.child(country).setValue(self.converter.encode(country: parsedData))
-                    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UserDefaults.standard.value(forKey: "changing") == nil {
+            if let oldDate = UserDefaults.standard.value(forKey: "leastDate") as? Date, let minDifference = Calendar.current.dateComponents([.day], from: oldDate, to: Date()).day, minDifference < 1 {
+                    self.performSegue(withIdentifier: "proceed", sender: self)
+            } else if let name = UserDefaults.standard.value(forKey: "country") as? String {
+                startAnimation()
+                getData(forCountry: name) { (snapshot) in
+                guard let data = snapshot.value as? [[String: Any]] else { return }
+                    let receivedData = self.converter.decode(data: data)
+                    self.dataBase = receivedData
+                    self.animationView.stop()
+                    UserDefaults.standard.set(data, forKey: "dataBase")
+                    UserDefaults.standard.set(Date(), forKey: "leastDate")
+                    self.performSegue(withIdentifier: "proceed", sender: self)
                 }
-                task.resume()
             }
-        
+        } else {
+            UserDefaults.standard.removeObject(forKey: "changing")
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -99,14 +103,14 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
             searchText += String(char) == " " ? "" : String(char)
         }
         switch searchText.lowercased() {
-        case "ukraine🇺🇦", "ukraine":
+        case "ukraine🇺🇦", "ukraine", "украина", "украина🇺🇦", "україна", "україна🇺🇦":
             chooseCountry(name: "ukraine")
-        case "russia🇷🇺", "russia":
+        case "russia🇷🇺", "russia", "россия", "россия🇷🇺", "росія", "росія🇷🇺":
             chooseCountry(name: "russia")
-        case "belarus🇧🇾", "belarus":
+        case "belarus🇧🇾", "belarus", "беларусь🇧🇾", "беларусь", "білорусь", "білорусь🇧🇾":
             chooseCountry(name: "belarus")
         default:
-            let alertController = UIAlertController(title: "Oops..", message: "Something went wrong. Check the country name please", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Oops..".localized, message: "Something went wrong. Check the country name please".localized, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }
@@ -118,7 +122,7 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
         lottieView.isHidden = false
         animationView.animation = Animation.named("128-around-the-world")
         animationView.frame.size = lottieView.frame.size
-        animationView.contentMode = .scaleToFill
+        animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         lottieView.addSubview(animationView)
         animationView.backgroundBehavior = .pauseAndRestore
@@ -126,11 +130,36 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
         animationView.play()
     }
     
+    
     func chooseCountry(name: String) {
         let defaults = UserDefaults.standard
         defaults.set(name, forKey: "country")
         startAnimation()
+        
+        getData(forCountry: name) { (snapshot) in
+            guard let data = snapshot.value as? [[String: Any]] else { return }
+            let receivedData = self.converter.decode(data: data)
+            self.dataBase = receivedData
+            self.animationView.stop()
+            UserDefaults.standard.set(data, forKey: "dataBase")
+            UserDefaults.standard.set(Date(), forKey: "leastDate")
+            self.performSegue(withIdentifier: "proceed", sender: self)
+        }
+        
     }
+    
+    func getData(forCountry country: String, completionHandler: @escaping (DataSnapshot) -> Void) {
+        ref = Database.database().reference()
+        
+        ref.child(country).observeSingleEvent(of: .value, with: completionHandler)
+        Timer.scheduledTimer(withTimeInterval: 20, repeats: false) { (_) in
+            let alertController = UIAlertController(title: "Bad Internet Connection".localized, message: "Please, check your Internet connection speed".localized, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    
     
 }
 

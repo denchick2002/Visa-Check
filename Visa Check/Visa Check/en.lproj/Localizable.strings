@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Visa Check
+
+  Created by Денис Андриевский on 1/18/20.
+  Copyright © 2020 Денис Андриевский. All rights reserved.
+*/
+"Ukraine 🇺🇦" = "Ukraine 🇺🇦";
+"Russia 🇷🇺" = "Russia 🇷🇺";
+"Belarus 🇧🇾" = "Belarus 🇧🇾";
+"Oops.." = "Oops..";
+"Something went wrong. Check the country name please" = "Something went wrong. Check the country name please";
+"Bad Internet Connection" = "Bad Internet Connection";
+"Please, check your Internet connection speed" = "Please, check your Internet connection speed";
+"Search countries..." = "Search countries...";
+"Settings" = "Settings";
+"Rate us on the App Store" = "Rate us on the App Store";
+"Change Passport Country" = "Change Passport Country";
+"Visa Free" = "Visa Free";
+"Visa Required" = "Visa Required";
+"E-visa" = "E-visa";
+"Visa on Arrival" = "Visa on Arrival";
+"Country" = "Country";
+"No temperature data available for this country" = "No temperature data available for this country";
+"No visa processing data available for this country" = "No visa processing data available for this country";
+"Write an e-mail to developer" = "Write an e-mail to developer";
+"Favorites" = "Favorites";

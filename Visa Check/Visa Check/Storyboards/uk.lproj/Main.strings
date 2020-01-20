@@ -1,0 +1,84 @@
+
+/* Class = "UILabel"; text = "  Visa Free  "; ObjectID = "6yV-1Y-1Xs"; */
+"6yV-1Y-1Xs.text" = "  Visa Free  ";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "8bx-DG-OAA"; */
+"8bx-DG-OAA.text" = "Shshaiobsi";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "92w-np-UIe"; */
+"92w-np-UIe.text" = "Shshaiobsi";
+
+/* Class = "UILabel"; text = "INFO"; ObjectID = "Dkq-vy-3d3"; */
+"Dkq-vy-3d3.text" = "ІНФО";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "FsU-pp-3cH"; */
+"FsU-pp-3cH.text" = "Shshaiobsi";
+
+/* Class = "UIButton"; normalTitle = "AVERAGE TEMPERATURE"; ObjectID = "GMM-ha-3zh"; */
+"GMM-ha-3zh.normalTitle" = "СЕРЕДНЯ ТЕМПЕРАТУРА";
+
+/* Class = "UILabel"; text = "Norway"; ObjectID = "HID-g4-UEB"; */
+"HID-g4-UEB.text" = "Norway";
+
+/* Class = "UINavigationItem"; title = "Countries"; ObjectID = "OSh-aw-tmF"; */
+"OSh-aw-tmF.title" = "Країни";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "S8M-EL-XfK"; */
+"S8M-EL-XfK.text" = "Shshaiobsi";
+
+/* Class = "UILabel"; text = "Visa Free"; ObjectID = "Suq-Ek-m30"; */
+"Suq-Ek-m30.text" = "Visa Free";
+
+/* Class = "UINavigationItem"; title = "Countries"; ObjectID = "YyB-Iv-bI6"; */
+"YyB-Iv-bI6.title" = "Країни";
+
+/* Class = "UIButton"; normalTitle = "VISA URL"; ObjectID = "d5g-f4-uyC"; */
+"d5g-f4-uyC.normalTitle" = "ВІЗА URL";
+
+/* Class = "UIButton"; normalTitle = "FIND FLIGHTS"; ObjectID = "dW5-V3-l0Z"; */
+"dW5-V3-l0Z.normalTitle" = "ЗНАЙТИ АВІАРЕЙСИ";
+
+/* Class = "UILabel"; text = "Norway"; ObjectID = "dew-ki-N3F"; */
+"dew-ki-N3F.text" = "Norway";
+
+/* Class = "UILabel"; text = "Insert your passport country"; ObjectID = "gpC-Xk-KwC"; */
+"gpC-Xk-KwC.text" = "Введіть Вашу країну";
+
+/* Class = "UILabel"; text = "Min Flight Price:"; ObjectID = "jU9-vM-VW1"; */
+"jU9-vM-VW1.text" = "Ціна Авіарейсів:";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "p6V-Lp-GHM"; */
+"p6V-Lp-GHM.title" = "Item";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "qQM-Zo-9sO"; */
+"qQM-Zo-9sO.text" = "Shshaiobsi";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "qnI-8u-o23"; */
+"qnI-8u-o23.text" = "Shshaiobsi";
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "rbr-nT-TcQ"; */
+"rbr-nT-TcQ.normalTitle" = "ДАЛІ";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "vCc-rf-FOf"; */
+"vCc-rf-FOf.text" = "Shshaiobsi";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "wr7-9F-mIv"; */
+"wr7-9F-mIv.text" = "Shshaiobsi";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "xd3-mp-yz9"; */
+"xd3-mp-yz9.text" = "Shshaiobsi";
+
+/* Class = "UILabel"; text = "Shshaiobsi"; ObjectID = "xi0-G8-CVk"; */
+"xi0-G8-CVk.text" = "Shshaiobsi";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "k8n-So-FDo"; */
+"k8n-So-FDo.title" = "Налаштування";
+
+/* Class = "UITabBarItem"; title = "Favorites"; ObjectID = "awt-Pp-3cy"; */
+"awt-Pp-3cy.title" = "Вибране";
+
+/* Class = "UINavigationItem"; title = "Favorites"; ObjectID = "ceU-JA-FhC"; */
+"ceU-JA-FhC.title" = "Вибране";
+
+/* Class = "UITabBarItem"; title = "Countries"; ObjectID = "12I-WP-K78"; */
+"12I-WP-K78.title" = "Країни";

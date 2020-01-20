@@ -7,38 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3702BBB923C5BD6F00110208 /* MainVC DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702BBB623C5BD6F00110208 /* MainVC DataSource.swift */; };
+		3702BBBA23C5BD6F00110208 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702BBB723C5BD6F00110208 /* CountryCell.swift */; };
+		3702BBBB23C5BD6F00110208 /* RoundedCornerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702BBB823C5BD6F00110208 /* RoundedCornerLabel.swift */; };
+		3702BBBD23C5C06400110208 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702BBBC23C5C06400110208 /* MainVC.swift */; };
+		370BD82C23D32E20002085F0 /* RateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BD82B23D32E20002085F0 /* RateService.swift */; };
+		370BD82F23D330D9002085F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370BD83123D330D9002085F0 /* Localizable.strings */; };
+		370BD83C23D33167002085F0 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BD83B23D33167002085F0 /* String+Ext.swift */; };
+		370BD83F23D33A30002085F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370BD84123D33A30002085F0 /* InfoPlist.strings */; };
+		370BD84A23D34A90002085F0 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BD84923D34A90002085F0 /* SettingsTVC.swift */; };
+		370BD84C23D356CA002085F0 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BD84B23D356CA002085F0 /* FavouritesVC.swift */; };
+		370BD84E23D35769002085F0 /* FavouritesVC DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BD84D23D35769002085F0 /* FavouritesVC DataSource.swift */; };
 		37290AAC23BF30B80020169A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37290AAB23BF30B80020169A /* Country.swift */; };
 		37290AB223BF37850020169A /* 128-around-the-world.json in Resources */ = {isa = PBXBuildFile; fileRef = 37290AB123BF37850020169A /* 128-around-the-world.json */; };
 		37290AB423BF53A90020169A /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37290AB323BF53A90020169A /* Converter.swift */; };
 		37290AB623BF53EA0020169A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37290AB523BF53EA0020169A /* GoogleService-Info.plist */; };
+		372DE4A823CB8D6C004B3385 /* DetailCountryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DE4A723CB8D6C004B3385 /* DetailCountryTVC.swift */; };
+		372DE4AA23CB8E8B004B3385 /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DE4A923CB8E8B004B3385 /* RoundedCornerButton.swift */; };
 		373003CA23B7A6B4007A4473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373003C923B7A6B4007A4473 /* AppDelegate.swift */; };
 		373003CC23B7A6B4007A4473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373003CB23B7A6B4007A4473 /* SceneDelegate.swift */; };
 		373003CE23B7A6B4007A4473 /* ChooseCountryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373003CD23B7A6B4007A4473 /* ChooseCountryVC.swift */; };
 		373003D123B7A6B4007A4473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373003CF23B7A6B4007A4473 /* Main.storyboard */; };
-		373003D423B7A6B4007A4473 /* Visa_Check.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 373003D223B7A6B4007A4473 /* Visa_Check.xcdatamodeld */; };
 		373003D623B7A6B5007A4473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373003D523B7A6B5007A4473 /* Assets.xcassets */; };
 		373003D923B7A6B5007A4473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373003D723B7A6B5007A4473 /* LaunchScreen.storyboard */; };
 		373003E123B7A7CA007A4473 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373003E023B7A7CA007A4473 /* Data+Ext.swift */; };
+		37E5F20923CDD3DE001CCEEF /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F20823CDD3DE001CCEEF /* UINavigationController+Ext.swift */; };
 		654CF84DFA5887AB41B17B25 /* Pods_Visa_Check.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FAB996B25EC0D99229D1A8 /* Pods_Visa_Check.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03D3E98EA8A75188A2B5AB91 /* Pods-Visa Check.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visa Check.release.xcconfig"; path = "Target Support Files/Pods-Visa Check/Pods-Visa Check.release.xcconfig"; sourceTree = "<group>"; };
 		27FAB996B25EC0D99229D1A8 /* Pods_Visa_Check.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visa_Check.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3702BBB623C5BD6F00110208 /* MainVC DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainVC DataSource.swift"; sourceTree = "<group>"; };
+		3702BBB723C5BD6F00110208 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		3702BBB823C5BD6F00110208 /* RoundedCornerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerLabel.swift; sourceTree = "<group>"; };
+		3702BBBC23C5C06400110208 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		370BD82B23D32E20002085F0 /* RateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateService.swift; sourceTree = "<group>"; };
+		370BD83023D330D9002085F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		370BD83323D330F5002085F0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		370BD83423D330F5002085F0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		370BD83623D33104002085F0 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		370BD83723D33104002085F0 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		370BD83B23D33167002085F0 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		370BD84023D33A30002085F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		370BD84223D33A32002085F0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		370BD84323D33A33002085F0 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		370BD84723D33CD4002085F0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		370BD84823D33CD7002085F0 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		370BD84923D34A90002085F0 /* SettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
+		370BD84B23D356CA002085F0 /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
+		370BD84D23D35769002085F0 /* FavouritesVC DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouritesVC DataSource.swift"; sourceTree = "<group>"; };
+		370BD85123D36F25002085F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		37290AAB23BF30B80020169A /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		37290AB123BF37850020169A /* 128-around-the-world.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "128-around-the-world.json"; sourceTree = "<group>"; };
 		37290AB323BF53A90020169A /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		37290AB523BF53EA0020169A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		373003C623B7A6B4007A4473 /* Visa Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Visa Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		372DE4A723CB8D6C004B3385 /* DetailCountryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCountryTVC.swift; sourceTree = "<group>"; };
+		372DE4A923CB8E8B004B3385 /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
+		373003C623B7A6B4007A4473 /* Tourist Assistance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tourist Assistance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		373003C923B7A6B4007A4473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		373003CB23B7A6B4007A4473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		373003CD23B7A6B4007A4473 /* ChooseCountryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCountryVC.swift; sourceTree = "<group>"; };
 		373003D023B7A6B4007A4473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		373003D323B7A6B4007A4473 /* Visa_Check.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Visa_Check.xcdatamodel; sourceTree = "<group>"; };
 		373003D523B7A6B5007A4473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		373003D823B7A6B5007A4473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		373003DA23B7A6B5007A4473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		373003E023B7A7CA007A4473 /* Data+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
+		37E5F20823CDD3DE001CCEEF /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		B1C25A89EAB842DC21F9C7F6 /* Pods-Visa Check.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visa Check.debug.xcconfig"; path = "Target Support Files/Pods-Visa Check/Pods-Visa Check.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +102,7 @@
 		373003C723B7A6B4007A4473 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				373003C623B7A6B4007A4473 /* Visa Check.app */,
+				373003C623B7A6B4007A4473 /* Tourist Assistance.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +121,8 @@
 				373003E623BD2E94007A4473 /* Resources */,
 				373003DA23B7A6B5007A4473 /* Info.plist */,
 				37290AB523BF53EA0020169A /* GoogleService-Info.plist */,
+				370BD83123D330D9002085F0 /* Localizable.strings */,
+				370BD84123D33A30002085F0 /* InfoPlist.strings */,
 			);
 			path = "Visa Check";
 			sourceTree = "<group>";
@@ -93,7 +130,10 @@
 		373003E423BD2E7E007A4473 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3702BBB623C5BD6F00110208 /* MainVC DataSource.swift */,
 				37290AB323BF53A90020169A /* Converter.swift */,
+				370BD82B23D32E20002085F0 /* RateService.swift */,
+				370BD84D23D35769002085F0 /* FavouritesVC DataSource.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -119,6 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				373003CD23B7A6B4007A4473 /* ChooseCountryVC.swift */,
+				3702BBBC23C5C06400110208 /* MainVC.swift */,
+				372DE4A723CB8D6C004B3385 /* DetailCountryTVC.swift */,
+				370BD84923D34A90002085F0 /* SettingsTVC.swift */,
+				370BD84B23D356CA002085F0 /* FavouritesVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -126,6 +170,9 @@
 		373003E823BD2EA8007A4473 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3702BBB723C5BD6F00110208 /* CountryCell.swift */,
+				3702BBB823C5BD6F00110208 /* RoundedCornerLabel.swift */,
+				372DE4A923CB8E8B004B3385 /* RoundedCornerButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,7 +180,6 @@
 		373003E923BD2EAD007A4473 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				373003D223B7A6B4007A4473 /* Visa_Check.xcdatamodeld */,
 				37290AAB23BF30B80020169A /* Country.swift */,
 			);
 			path = Model;
@@ -143,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				373003E023B7A7CA007A4473 /* Data+Ext.swift */,
+				37E5F20823CDD3DE001CCEEF /* UINavigationController+Ext.swift */,
+				370BD83B23D33167002085F0 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,7 +240,7 @@
 			);
 			name = "Visa Check";
 			productName = "Visa Check";
-			productReference = 373003C623B7A6B4007A4473 /* Visa Check.app */;
+			productReference = 373003C623B7A6B4007A4473 /* Tourist Assistance.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,6 +265,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				uk,
 			);
 			mainGroup = 373003BD23B7A6B4007A4473;
 			productRefGroup = 373003C723B7A6B4007A4473 /* Products */;
@@ -234,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				373003D923B7A6B5007A4473 /* LaunchScreen.storyboard in Resources */,
+				370BD83F23D33A30002085F0 /* InfoPlist.strings in Resources */,
+				370BD82F23D330D9002085F0 /* Localizable.strings in Resources */,
 				37290AB223BF37850020169A /* 128-around-the-world.json in Resources */,
 				37290AB623BF53EA0020169A /* GoogleService-Info.plist in Resources */,
 				373003D623B7A6B5007A4473 /* Assets.xcassets in Resources */,
@@ -291,22 +343,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				373003CE23B7A6B4007A4473 /* ChooseCountryVC.swift in Sources */,
+				370BD82C23D32E20002085F0 /* RateService.swift in Sources */,
+				370BD84E23D35769002085F0 /* FavouritesVC DataSource.swift in Sources */,
 				373003E123B7A7CA007A4473 /* Data+Ext.swift in Sources */,
+				370BD84C23D356CA002085F0 /* FavouritesVC.swift in Sources */,
+				370BD83C23D33167002085F0 /* String+Ext.swift in Sources */,
 				373003CA23B7A6B4007A4473 /* AppDelegate.swift in Sources */,
+				3702BBB923C5BD6F00110208 /* MainVC DataSource.swift in Sources */,
+				3702BBBD23C5C06400110208 /* MainVC.swift in Sources */,
 				37290AB423BF53A90020169A /* Converter.swift in Sources */,
+				37E5F20923CDD3DE001CCEEF /* UINavigationController+Ext.swift in Sources */,
+				372DE4AA23CB8E8B004B3385 /* RoundedCornerButton.swift in Sources */,
+				370BD84A23D34A90002085F0 /* SettingsTVC.swift in Sources */,
+				372DE4A823CB8D6C004B3385 /* DetailCountryTVC.swift in Sources */,
 				373003CC23B7A6B4007A4473 /* SceneDelegate.swift in Sources */,
 				37290AAC23BF30B80020169A /* Country.swift in Sources */,
-				373003D423B7A6B4007A4473 /* Visa_Check.xcdatamodeld in Sources */,
+				3702BBBB23C5BD6F00110208 /* RoundedCornerLabel.swift in Sources */,
+				3702BBBA23C5BD6F00110208 /* CountryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		370BD83123D330D9002085F0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				370BD83023D330D9002085F0 /* en */,
+				370BD83423D330F5002085F0 /* ru */,
+				370BD83723D33104002085F0 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		370BD84123D33A30002085F0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				370BD84023D33A30002085F0 /* en */,
+				370BD84223D33A32002085F0 /* ru */,
+				370BD84323D33A33002085F0 /* uk */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		373003CF23B7A6B4007A4473 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				373003D023B7A6B4007A4473 /* Base */,
+				370BD84723D33CD4002085F0 /* ru */,
+				370BD84823D33CD7002085F0 /* uk */,
+				370BD85123D36F25002085F0 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -315,6 +401,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				373003D823B7A6B5007A4473 /* Base */,
+				370BD83323D330F5002085F0 /* ru */,
+				370BD83623D33104002085F0 /* uk */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -326,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -386,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -442,6 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 452BPWXS55;
 				INFOPLIST_FILE = "Visa Check/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -449,8 +540,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.den444ick.Visa-Check";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.den444ick.travelassistant;
+				PRODUCT_NAME = "Tourist Assistance";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -462,6 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 452BPWXS55;
 				INFOPLIST_FILE = "Visa Check/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -469,8 +562,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.den444ick.Visa-Check";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.den444ick.travelassistant;
+				PRODUCT_NAME = "Tourist Assistance";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -498,19 +592,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		373003D223B7A6B4007A4473 /* Visa_Check.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				373003D323B7A6B4007A4473 /* Visa_Check.xcdatamodel */,
-			);
-			currentVersion = 373003D323B7A6B4007A4473 /* Visa_Check.xcdatamodel */;
-			path = Visa_Check.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 373003BE23B7A6B4007A4473 /* Project object */;
 }
