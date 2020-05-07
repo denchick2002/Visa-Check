@@ -23,6 +23,8 @@ class MainVC: UIViewController, UITableViewDelegate, UISearchResultsUpdating {
     private var lottieView: UIView!
     private let animationView = AnimationView()
     private var dimmView = UIView(frame: CGRect(x: 0, y: 0, width: 3000, height: 3000))
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         lottieView = UIView(frame: CGRect(x: (view.frame.width-200)/2, y: (view.frame.height-200)/2, width: 200, height: 200))
@@ -46,7 +48,7 @@ class MainVC: UIViewController, UITableViewDelegate, UISearchResultsUpdating {
         DispatchQueue.global(qos: .utility).async {
             
             if let dataBase = UserDefaults.standard.value(forKey: "dataBase") as? [[String: Any]] {
-                self.dataBase = self.converter.decode(data: dataBase.shuffled()).visaRequirements
+                self.dataBase = self.converter.decode(data: dataBase).visaRequirements
                 self.permanentDataBase = self.dataBase
             }
             

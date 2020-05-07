@@ -1,13 +1,7 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let country = try? newJSONDecoder().decode(Country.self, from: jsonData)
-
 import Foundation
 
 // MARK: - CountryElement
 struct Country: Codable {
-
     var visaRequirements: [VisaRequirement]
 }
 
@@ -16,37 +10,40 @@ struct NCountry: Codable {
     var id: Int
     var name, alpha2Code, alpha3Code: String
     var numericCode: String?
-    var slug, nationality, nationalitySlug: String
+    var slug: String
+    var visaSlug: String?
+    var nationality, nationalitySlug: String
     var imageURL: String
     var capital, isdCode: String?
     var currencyName, currencyCode: String
     var region: Region
-    var subregion: Subregion
+    var subregion: String
     var population, lat, lng: String
     var city: String?
     var cityLat, cityLng, area, nearbyCountrySlugs: String
     var timeZones: String
     var formalName: String?
-    var isIndependent: IsIndependent
+    var isIndependent: String
     var developmentStatus: DevelopmentStatus
     var languageCodes, languageNames: String
+    var lgbtqRanking, lgbtqScore: Int?
     var countryVisaRanking: CountryVisaRanking?
     var visaProcessingURL: String?
     var createdAt, updatedAt: Date
+    var gayRanking, gayScore: Int?
     var countryTemperature: CountryTemperature?
     var travelAdvice: TravelAdvice?
-    var visaSlug: String?
     var visaSchemeID, parentCountryID: Int?
     var currencySymbol: String?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, alpha2Code, alpha3Code, numericCode, slug, nationality, nationalitySlug
+        case id, name, alpha2Code, alpha3Code, numericCode, slug, visaSlug, nationality, nationalitySlug
         case imageURL = "imageUrl"
         case capital
         case isdCode = "ISDCode"
-        case currencyName, currencyCode, region, subregion, population, lat, lng, city, cityLat, cityLng, area, nearbyCountrySlugs, timeZones, formalName, isIndependent, developmentStatus, languageCodes, languageNames, countryVisaRanking
+        case currencyName, currencyCode, region, subregion, population, lat, lng, city, cityLat, cityLng, area, nearbyCountrySlugs, timeZones, formalName, isIndependent, developmentStatus, languageCodes, languageNames, lgbtqRanking, lgbtqScore, countryVisaRanking
         case visaProcessingURL = "visaProcessingUrl"
-        case createdAt, updatedAt, countryTemperature, travelAdvice, visaSlug
+        case createdAt, updatedAt, gayRanking, gayScore, countryTemperature, travelAdvice
         case visaSchemeID = "visaSchemeId"
         case parentCountryID = "parentCountryId"
         case currencySymbol
@@ -90,6 +87,7 @@ enum IsIndependent: String, Codable {
     case commonwealthOfUS = "Commonwealth of US"
     case crownDependencyOfUK = "Crown dependency of UK"
     case inContention = "In contention"
+    case international = "International"
     case partOfChina = "Part of China"
     case partOfDenmark = "Part of Denmark"
     case partOfFinland = "Part of Finland"
@@ -109,6 +107,7 @@ enum Region: String, Codable {
     case asia = "Asia"
     case europe = "Europe"
     case oceania = "Oceania"
+    case polar = "Polar"
 }
 
 enum Subregion: String, Codable {
@@ -127,6 +126,7 @@ enum Subregion: String, Codable {
     case northernAfrica = "Northern Africa"
     case northernAmerica = "Northern America"
     case northernEurope = "Northern Europe"
+    case polar = "Polar"
     case polynesia = "Polynesia"
     case southAmerica = "South America"
     case southEasternAsia = "South-Eastern Asia"
@@ -170,38 +170,35 @@ enum AdviceDescription: String, Codable {
 // MARK: - VisaRequirement
 struct VisaRequirement: Codable {
     var id, originCountryID: Int
-    var originCountry: JSONNull?
     var destinationCountryID: Int
     var destinationCountry: NCountry
     var visaCategoryID: Int
     var visaCategory: VisaCategory
     var visaSubcategoryID: Int
-    var duration: Duration
+    var duration: String
     var notes: String
     var totalVotes, initialVotes: Int
-    var visaRequirementVote, exemptionVisaRequirement, dualVisaRequirement: JSONNull?
-    var flightPrice: FlightPrice?
     var exchangePrice: ExchangePrice?
     var slug, website: String
-    var visaName: VisaName
-    var userNotes, visaQuestions: JSONNull?
+    var visaName: String
     var createdAt, updatedAt: Date
+    var flightPrice: FlightPrice?
     var visaProcessingAvailable: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case originCountryID = "originCountryId"
-        case originCountry
         case destinationCountryID = "destinationCountryId"
         case destinationCountry
         case visaCategoryID = "visaCategoryId"
         case visaCategory
         case visaSubcategoryID = "visaSubcategoryId"
-        case duration, notes, totalVotes, initialVotes, visaRequirementVote, exemptionVisaRequirement, dualVisaRequirement, flightPrice, exchangePrice, slug, website, visaName, userNotes, visaQuestions, createdAt, updatedAt, visaProcessingAvailable
+        case duration, notes, totalVotes, initialVotes, exchangePrice, slug, website, visaName, createdAt, updatedAt, flightPrice, visaProcessingAvailable
     }
 }
 
 enum Duration: String, Codable {
+    case durationUnlimited = "unlimited"
     case empty = ""
     case the14Days = "14 days"
     case the14Days1Month = "14 days/ 1 month"
@@ -220,18 +217,23 @@ enum Duration: String, Codable {
     case the3Months = "3 months"
     case the45Days = "45 days"
     case the4Months = "4 months"
+    case the4Weeks = "4 weeks"
     case the60Days = "60 days"
+    case the6Months = "6 months"
     case the6Weeks = "6 weeks"
     case the7Days = "7 days"
+    case the8Months = "8 months"
     case the90Days = "90 days"
+    case unlimited = "Unlimited"
     case unlimitedStay = "Unlimited stay"
+    case upTo5Years = "up to 5 years"
     case upTo90Days = "up to 90 days"
 }
 
 // MARK: - ExchangePrice
 struct ExchangePrice: Codable {
     var id, originCountryID, destinationCountryID: Int
-    var originCurrencyCode: OriginCurrencyCode
+    var originCurrencyCode: String
     var destinationCurrencyCode: String
     var price: Double
     var quoteDateTime: Date
@@ -246,14 +248,16 @@ struct ExchangePrice: Codable {
 
 enum OriginCurrencyCode: String, Codable {
     case byn = "BYN"
+    case gbp = "GBP"
     case rub = "RUB"
     case uah = "UAH"
+    case usd = "USD"
 }
 
 // MARK: - FlightPrice
 struct FlightPrice: Codable {
     var id, originCountryID, destinationCountryID, minPrice: Int
-    var currency: OriginCurrencyCode
+    var currency: String
     var direct: Int
     var outboundCarrierIDS, outboundCarrierNames: String
     var outboundDate: Date
@@ -290,26 +294,43 @@ enum Name: String, Codable {
     case eVisa = "E-visa"
     case visaFree = "Visa Free"
     case visaOnArrival = "Visa on Arrival"
+    case visaRefused = "Visa Refused"
     case visaRequired = "Visa Required"
 }
 
 enum VisaName: String, Codable {
     case e600OnlineVisitorVisa = "e600 Online Visitor Visa"
+    case eTouristCard = "E-tourist card"
     case eVisa = "eVisa"
     case eVisaFreeVisaOnArrival = "eVisa / Free visa on arrival"
     case eVisaVisaOnArrival = "eVisa / Visa on arrival"
+    case eVisitor = "eVisitor"
+    case electronicAuthorisation = "Electronic authorisation"
     case electronicAuthorization = "Electronic Authorization"
+    case electronicTravelAuthority = "Electronic Travel Authority"
     case electronicVisa = "Electronic visa"
     case entryPermitOnArrival = "Entry Permit on arrival"
     case entryPermitRequired = "Entry permit required"
+    case freeEVisaVisaOnArrival = "Free eVisa / Visa on arrival"
+    case freeVisaOnArrival = "Free visa on arrival"
+    case freeVisitorSPermitOnArrival = "Free Visitor's Permit on arrival"
+    case freedomOfMovement = "Freedom of movement"
     case onlineVisa = "Online Visa"
     case permitRequired = "Permit required"
+    case rightOfAbode = "Right of abode"
+    case specialAuthorisationRequired = "Special authorisation required"
     case specialPermitRequired = "Special permit required"
-    case touristCardRequired = "Tourist card required"
+    case specialPermitsRequired = "Special permits required"
+    case touristCardRequired = "Tourist Card required"
+    case travelRestricted = "Travel restricted"
     case visaNameEVisa = "e-Visa"
+    case visaNameFreeVisitorSPermitOnArrival = "Free Visitor's permit on arrival"
+    case visaNameTouristCardRequired = "Tourist card required"
+    case visaNameVisitorSPermitOnArrival = "Visitor's permit on arrival"
     case visaNotRequired = "Visa not required"
     case visaOnArrival = "Visa on arrival"
     case visaRequired = "Visa required"
+    case visaWaiverProgram = "Visa Waiver Program"
     case visitorSPermitOnArrival = "Visitor's Permit on arrival"
 }
 

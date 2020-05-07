@@ -27,6 +27,14 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
     private var ref: DatabaseReference!
     private var dataBase: Country!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UserDefaults.standard.value(forKey: "firstLaunch") == nil {
+            UserDefaults.standard.removeObject(forKey: "leastDate")
+            UserDefaults.standard.set(true, forKey: "firstLaunch")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +52,15 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
         
         // MARK:- Configuring autocompletable textField
         searchTextField.delegate = self
-        let filterStrings = ["Ukraine 🇺🇦", "Russia 🇷🇺", "Belarus 🇧🇾", "Украина 🇺🇦", "Россия 🇷🇺", "Беларусь 🇧🇾", "Україна 🇺🇦", "Росія 🇷🇺", "Білорусь 🇧🇾"]
+        var filterStrings = [String]()
+        switch Locale.current.languageCode {
+        case "uk":
+            filterStrings = ["Україна 🇺🇦", "Росія 🇷🇺", "Білорусь 🇧🇾", "Сполучені Штати 🇺🇸", "Великобританія 🇬🇧", "Молдова 🇲🇩", "Казахстан 🇰🇿", "Узбекистан 🇺🇿", "Туркменістан 🇹🇲", "Азербайджан 🇦🇿", "Вірменія 🇦🇲", "Таджикистан 🇹🇯", "Киргизстан 🇰🇬"]
+        case "ru":
+            filterStrings = ["Украина 🇺🇦", "Россия 🇷🇺", "Беларусь 🇧🇾", "Соединённые Штаты 🇺🇸", "Великобритания 🇬🇧", "Молдова 🇲🇩", "Казахстан 🇰🇿", "Узбекистан 🇺🇿", "Туркменистан 🇹🇲", "Азербайджан 🇦🇿", "Армения 🇦🇲", "Таджикистан 🇹🇯", "Кыргызстан 🇰🇬"]
+        default:
+            filterStrings = ["Ukraine 🇺🇦", "Russia 🇷🇺", "Belarus 🇧🇾", "United States 🇺🇸", "United Kingdom 🇬🇧", "Moldova 🇲🇩", "Kazakhstan 🇰🇿", "Uzbekistan 🇺🇿", "Turkmenistan 🇹🇲", "Azerbaijan 🇦🇿", "Armenia 🇦🇲", "Tajikistan 🇹🇯", "Kyrgyzstan 🇰🇬"]
+        }
         searchTextField.filterStrings(filterStrings)
         searchTextField.maxResultsListHeight = 200
         searchTextField.theme.cellHeight = 50
@@ -57,9 +73,31 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
             searchTextField.theme.cellHeight = 50
             searchTextField.theme.font = UIFont.systemFont(ofSize: 18)
         }
-        
+    }
+    
+    func update(forCountry country: String) {
+        let urlString = "https://visalist.io/api/public/visa_requirements/country/\(country)"
+            if let url = URL(string: urlString) {
+            
+                let session = URLSession(configuration: .default)
+                let task = session.dataTask(with: url) { (data, response, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else if let data = data {
+                        print("AA")
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .iso8601
+                        let parsedData = try! decoder.decode(Country.self, from: data)
+                        self.ref = Database.database().reference()
+                        self.ref.child(country).setValue(self.converter.encode(country: parsedData))
+                    }
+                }
+                task.resume()
+            }
         
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -109,6 +147,26 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
             chooseCountry(name: "russia")
         case "belarus🇧🇾", "belarus", "беларусь🇧🇾", "беларусь", "білорусь", "білорусь🇧🇾":
             chooseCountry(name: "belarus")
+        case "сполученіштати", "сполученіштати🇺🇸", "unitedstates🇺🇸", "unitedstates", "соединённыештаты🇺🇸", "соединённыештаты":
+            chooseCountry(name: "united-states-of-america")
+        case "unitedkingdom", "unitedkingdom🇬🇧", "великобритания🇬🇧", "великобритания", "великобританія🇬🇧", "великобританія":
+            chooseCountry(name: "united-kingdom")
+        case "moldova🇲🇩", "moldova", "молдова", "молдова🇲🇩":
+            chooseCountry(name: "moldova")
+        case "kazakhstan🇰🇿", "kazakhstan", "казахстан", "казахстан🇰🇿":
+            chooseCountry(name: "kazakhstan")
+        case "uzbekistan🇺🇿", "uzbekistan", "узбекистан", "узбекистан🇺🇿":
+            chooseCountry(name: "uzbekistan")
+        case "turkmenistan🇹🇲", "turkmenistan", "туркменистан", "туркменистан🇹🇲", "туркменістан", "туркменістан🇹🇲":
+            chooseCountry(name: "turkmenistan")
+        case "azerbaijan🇦🇿", "azerbaijan", "азербайджан🇦🇿", "азербайджан":
+            chooseCountry(name: "azerbaijan")
+        case "armenia🇦🇲", "armenia", "армения🇦🇲", "армения", "вірменія", "вірменія🇦🇲":
+            chooseCountry(name: "armenia")
+        case "tajikistan🇹🇯", "tajikistan", "таджикистан", "таджикистан🇹🇯":
+            chooseCountry(name: "tajikistan")
+        case "kyrgyzstan", "kyrgyzstan🇰🇬", "кыргызстан🇰🇬", "киргизстан🇰🇬", "кыргызстан", "киргизстан":
+            chooseCountry(name: "kyrgyzstan")
         default:
             let alertController = UIAlertController(title: "Oops..".localized, message: "Something went wrong. Check the country name please".localized, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -137,7 +195,8 @@ class ChooseCountryVC: UIViewController, UITextFieldDelegate {
         startAnimation()
         
         getData(forCountry: name) { (snapshot) in
-            guard let data = snapshot.value as? [[String: Any]] else { return }
+            guard let data1 = snapshot.value as? [[String: Any]] else { return }
+            let data = data1.shuffled()
             let receivedData = self.converter.decode(data: data)
             self.dataBase = receivedData
             self.animationView.stop()

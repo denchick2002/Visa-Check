@@ -23,7 +23,7 @@ extension FavouritesVC: UITableViewDataSource {
         let country = dataBase[indexPath.row]
         cell.nameLabel.text = "\(country.destinationCountry.name)"
         cell.capitalLabel.text = country.destinationCountry.capital != nil ? country.destinationCountry.capital : "No information"
-        cell.regionLabel.text = country.destinationCountry.subregion.rawValue
+        cell.regionLabel.text = country.destinationCountry.subregion
         cell.visaLabel.text = country.visaCategory.name.rawValue.localized
         
         if let imgData = imageData[country.destinationCountry.name] {

@@ -51,7 +51,7 @@ class FavouritesVC: UIViewController, UITableViewDelegate, UISearchResultsUpdati
         DispatchQueue.global(qos: .utility).async {
             
             if let dataBase = UserDefaults.standard.value(forKey: "dataBase") as? [[String: Any]] {
-                self.dataBase = self.converter.decode(data: dataBase.shuffled()).visaRequirements
+                self.dataBase = self.converter.decode(data: dataBase).visaRequirements
             }
                 
             if let dataBase1 = UserDefaults.standard.value(forKey: "favourites") as? [String] {

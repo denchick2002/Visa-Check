@@ -36,7 +36,7 @@ class Converter {
                     "currencyName": visaRequirement.destinationCountry.currencyName,
                     "currencyCode": visaRequirement.destinationCountry.currencyCode,
                     "region": visaRequirement.destinationCountry.region.rawValue,
-                    "subregion": visaRequirement.destinationCountry.subregion.rawValue,
+                    "subregion": visaRequirement.destinationCountry.subregion,
                     "population": visaRequirement.destinationCountry.population,
                     "lat": visaRequirement.destinationCountry.lat,
                     "lng": visaRequirement.destinationCountry.lng,
@@ -47,21 +47,10 @@ class Converter {
                     "nearbyCountrySlugs": visaRequirement.destinationCountry.nearbyCountrySlugs,
                     "timeZones": visaRequirement.destinationCountry.timeZones,
                     "formalName": visaRequirement.destinationCountry.formalName as Any,
-                    "isIndependent": visaRequirement.destinationCountry.isIndependent.rawValue,
+                    "isIndependent": visaRequirement.destinationCountry.isIndependent,
                     "developmentStatus": visaRequirement.destinationCountry.developmentStatus.rawValue,
                     "languageCodes": visaRequirement.destinationCountry.languageCodes,
                     "languageNames": visaRequirement.destinationCountry.languageNames,
-                    "countryVisaRanking":
-                        [
-                                "countryID": visaRequirement.destinationCountry.countryVisaRanking?.countryID,
-                                "eVisa": visaRequirement.destinationCountry.countryVisaRanking?.eVisa,
-                                "visaEasyTotal": visaRequirement.destinationCountry.countryVisaRanking?.visaEasyTotal,
-                                "visaFree": visaRequirement.destinationCountry.countryVisaRanking?.visaFree,
-                                "visaOnArrival": visaRequirement.destinationCountry.countryVisaRanking?.visaOnArrival,
-                                "visaRefused": visaRequirement.destinationCountry.countryVisaRanking?.visaRefused,
-                                "visaRequired": visaRequirement.destinationCountry.countryVisaRanking?.visaRequired,
-                                "visaUnknown": visaRequirement.destinationCountry.countryVisaRanking?.visaUnknown
-                        ],
                     "createdAt": dateFormatter.string(from: visaRequirement.destinationCountry.createdAt),
                     "updatedAt": dateFormatter.string(from: visaRequirement.destinationCountry.updatedAt),
                     "visaProcessingURL": visaRequirement.destinationCountry.visaProcessingURL as Any,
@@ -112,7 +101,7 @@ class Converter {
                         "updatedAt": dateFormatter.string(from: visaRequirement.visaCategory.updatedAt) 
                     ],
                 "visaSubcategoryID": visaRequirement.visaSubcategoryID,
-                "duration": visaRequirement.duration.rawValue,
+                "duration": visaRequirement.duration,
                 "notes": visaRequirement.notes,
                 "totalVotes": visaRequirement.totalVotes,
                 "initialVotes": visaRequirement.initialVotes,
@@ -122,7 +111,7 @@ class Converter {
                         "originCountryID": visaRequirement.flightPrice?.originCountryID as Any,
                         "destinationCountryID": visaRequirement.flightPrice?.destinationCountryID as Any,
                         "minPrice": visaRequirement.flightPrice?.minPrice as Any,
-                        "currency": visaRequirement.flightPrice?.currency.rawValue as Any,
+                        "currency": visaRequirement.flightPrice?.currency as Any,
                         "direct": visaRequirement.flightPrice?.direct as Any,
                         "outboundCarrierIDS": visaRequirement.flightPrice?.outboundCarrierIDS as Any,
                         "outboundCarrierNames": visaRequirement.flightPrice?.outboundCarrierNames as Any,
@@ -137,14 +126,14 @@ class Converter {
                         "id": visaRequirement.exchangePrice?.id as Any,
                         "originCountryID": visaRequirement.exchangePrice?.originCountryID as Any,
                         "destinationCountryID": visaRequirement.exchangePrice?.destinationCountryID as Any,
-                        "originCurrencyCode": visaRequirement.exchangePrice?.originCurrencyCode.rawValue as Any,
+                        "originCurrencyCode": visaRequirement.exchangePrice?.originCurrencyCode as Any,
                         "destinationCurrencyCode": visaRequirement.exchangePrice?.destinationCurrencyCode as Any,
                         "price": visaRequirement.exchangePrice?.price as Any,
                         "quoteDateTime": (visaRequirement.exchangePrice != nil ? dateFormatter.string(from: visaRequirement.exchangePrice!.quoteDateTime) : nil) as Any
                     ],
                 "slug": visaRequirement.slug,
                 "website": visaRequirement.website,
-                "visaName": visaRequirement.visaName.rawValue,
+                "visaName": visaRequirement.visaName,
                 "createdAt": dateFormatter.string(from: visaRequirement.createdAt),
                 "updatedAt": dateFormatter.string(from: visaRequirement.updatedAt),
                 "visaProcessingAvailable": visaRequirement.visaProcessingAvailable as Any
@@ -175,97 +164,6 @@ class Converter {
                 region = .oceania
             default:
                 region = .africa
-            }
-            // Subregion
-            var subregion: Subregion = .australiaAndNewZealand
-            switch (requirement["destinationCountry"] as! [String: Any])["subregion"] as! String {
-            case "Australia and New Zealand":
-                subregion = .australiaAndNewZealand
-            case "Caribbean":
-                subregion = .caribbean
-            case "Central America":
-                subregion = .centralAmerica
-            case "Central Asia":
-                subregion = .centralAsia
-            case "Central Europe":
-                subregion = .centralEurope
-            case "Eastern Africa":
-                subregion = .easternAfrica
-            case "Eastern Asia":
-                subregion = .easternAsia
-            case "Eastern Europe":
-                subregion = .easternEurope
-            case "Melanesia":
-                subregion = .melanesia
-            case "Micronesia":
-                subregion = .micronesia
-            case "Middle Africa":
-                subregion = .middleAfrica
-            case "Middle East":
-                subregion = .middleEast
-            case "Northern Africa":
-                subregion = .northernAfrica
-            case "Northern America":
-                subregion = .northernAmerica
-            case "Northern Europe":
-                subregion = .northernEurope
-            case "Polynesia":
-                subregion = .polynesia
-            case "South America":
-                subregion = .southAmerica
-            case "South-Eastern Asia":
-                subregion = .southEasternAsia
-            case "Southern Africa":
-                subregion = .southernAfrica
-            case "Southern Asia":
-                subregion = .southernAsia
-            case "Southern Europe":
-                subregion = .southernEurope
-            case "Western Africa":
-                subregion = .westernAfrica
-            case "Western Asia":
-                subregion = .westernAsia
-            case "Western Europe":
-                subregion = .westernEurope
-            default:
-                subregion = .australiaAndNewZealand
-            }
-            
-            // isIndependent
-            var isIndependent: IsIndependent = .associatedWithNewZealand
-            switch (requirement["destinationCountry"] as! [String: Any])["isIndependent"] as! String {
-            case "Associated with New Zealand":
-                isIndependent = .associatedWithNewZealand
-            case "Commonwealth of US":
-                isIndependent = .commonwealthOfUS
-            case "Crown dependency of UK":
-                isIndependent = .crownDependencyOfUK
-            case "In contention":
-                isIndependent = .inContention
-            case "Part of China":
-                isIndependent = .partOfChina
-            case "Part of Denmark":
-                isIndependent = .partOfDenmark
-            case "Part of Finland":
-                isIndependent = .partOfFinland
-            case "Part of France":
-                isIndependent = .partOfFrance
-            case "Part of Netherlands":
-                isIndependent = .partOfNetherlands
-            case "Territory of Australia":
-                isIndependent = .territoryOfAustralia
-            case "Territory of France":
-                isIndependent = .territoryOfFrance
-            case "Territory of Norway":
-                isIndependent = .territoryOfNorway
-            case "Territory of UK":
-                isIndependent = .territoryOfUK
-            case "Territory of US":
-                isIndependent = .territoryOfUS
-            case "Yes":
-                isIndependent = .yes
-            default:
-                isIndependent = .associatedWithNewZealand
             }
             
             // developmentStatus
@@ -313,143 +211,18 @@ class Converter {
                 name = .eVisa
             }
             
-            // visa name
-            var visaName: VisaName = .e600OnlineVisitorVisa
-            switch requirement["visaName"] as! String {
-            case "e600 Online Visitor Visa":
-                visaName = .e600OnlineVisitorVisa
-            case "eVisa":
-                visaName = .eVisa
-            case "eVisa / Free visa on arrival":
-                visaName = .eVisaFreeVisaOnArrival
-            case "eVisa / Visa on arrival":
-                visaName = .eVisaVisaOnArrival
-            case "Electronic Authorization":
-                visaName = .electronicAuthorization
-            case "Electronic visa":
-                visaName = .electronicVisa
-            case "Entry Permit on arrival":
-                visaName = .entryPermitOnArrival
-            case "Entry permit required":
-                visaName = .entryPermitRequired
-            case "Online Visa":
-                visaName = .onlineVisa
-            case "Permit required":
-                visaName = .permitRequired
-            case "Special permit required":
-                visaName = .specialPermitRequired
-            case "Tourist card required":
-                visaName = .touristCardRequired
-            case "e-Visa":
-                visaName = .visaNameEVisa
-            case "Visa not required":
-                visaName = .visaNotRequired
-            case "Visa on arrival":
-                visaName = .visaOnArrival
-            case "Visa required":
-                visaName = .visaRequired
-            case "Visitor's Permit on arrival":
-                visaName = .visitorSPermitOnArrival
-            default:
-                visaName = .e600OnlineVisitorVisa
-            }
-            
-            // duration
-            var duration: Duration = .empty
-            switch (requirement["duration"] as! String) {
-            case "":
-                duration = .empty
-            case "14 days":
-                duration = .the14Days
-            case "14 days/ 1 month":
-                duration = .the14Days1Month
-            case "15 days":
-                duration = .the15Days
-            case "180 days":
-                duration = .the180Days
-            case "183 days":
-                duration = .the183Days
-            case "1 month":
-                duration = .the1Month
-            case "1 year":
-                duration = .the1Year
-            case "21 days":
-                duration = .the21Days
-            case "28 days":
-                duration = .the28Days
-            case "2 months":
-                duration = .the2Months
-            case "30 days":
-                duration = .the30Days
-            case "30 days / 8 days":
-                duration = .the30Days8Days
-            case "31 days":
-                duration = .the31Days
-            case "360 days":
-                duration = .the360Days
-            case "3 months":
-                duration = .the3Months
-            case "45 days":
-                duration = .the45Days
-            case "4 months":
-                duration = .the4Months
-            case "60 days":
-                duration = .the60Days
-            case "6 weeks":
-                duration = .the6Weeks
-            case "7 days":
-                duration = .the7Days
-            case "90 days":
-                duration = .the90Days
-            case "Unlimited stay":
-                duration = .unlimitedStay
-            case "up to 90 days":
-                duration = .upTo90Days
-            default:
-                duration = .empty
-            }
-            
-            
-            // origin currency code
-            var originCurrencyCode: OriginCurrencyCode? = nil
-            if let value = requirement["flightPrice"] as? [String: Any], let code = value["currency"] as? String {
-                switch code {
-                case "BYN":
-                    originCurrencyCode = .byn
-                case "RUB":
-                    originCurrencyCode = .rub
-                case "UAH":
-                    originCurrencyCode = .uah
-                default:
-                    originCurrencyCode = nil
-                }
-            }
-            
-            if let value = requirement["exchangePrice"] as? [String: Any], let code = value["originCurrencyCode"] as? String {
-                switch code {
-                case "BYN":
-                    originCurrencyCode = .byn
-                case "RUB":
-                    originCurrencyCode = .rub
-                case "UAH":
-                    originCurrencyCode = .uah
-                default:
-                    originCurrencyCode = originCurrencyCode != nil ? originCurrencyCode : nil
-                }
-            }
-            
             visaRequirements.append(VisaRequirement(
                 id: requirement["id"] as! Int,
                 originCountryID: requirement["originCountryID"] as! Int,
-                destinationCountryID: requirement["destinationCountryID"] as! Int,
-                destinationCountry: NCountry(
+                destinationCountryID: requirement["destinationCountryID"] as! Int, destinationCountry:
+                NCountry(
                     id: (requirement["destinationCountry"] as! [String: Any])["id"] as! Int,
                     name: (requirement["destinationCountry"] as! [String: Any])["name"] as! String,
                     alpha2Code: (requirement["destinationCountry"] as! [String: Any])["alpha2Code"] as! String,
                     alpha3Code: (requirement["destinationCountry"] as! [String: Any])["alpha3Code"] as! String,
                     numericCode: (requirement["destinationCountry"] as! [String: Any])["numericCode"] as? String,
                     slug: (requirement["destinationCountry"] as! [String: Any])["slug"] as! String,
-                    nationality: (requirement["destinationCountry"] as! [String: Any])["nationality"] as! String,
+                    visaSlug: (requirement["destinationCountry"] as! [String: Any])["visaSlug"] as? String, nationality: (requirement["destinationCountry"] as! [String: Any])["nationality"] as! String,
                     nationalitySlug: (requirement["destinationCountry"] as! [String: Any])["nationalitySlug"] as! String,
                     imageURL: (requirement["destinationCountry"] as! [String: Any])["imageURL"] as! String,
                     capital: (requirement["destinationCountry"] as! [String: Any])["capital"] as? String,
@@ -457,7 +230,7 @@ class Converter {
                     currencyName: (requirement["destinationCountry"] as! [String: Any])["currencyName"] as! String,
                     currencyCode: (requirement["destinationCountry"] as! [String: Any])["currencyCode"] as! String,
                     region: region,
-                    subregion: subregion,
+                    subregion: (requirement["destinationCountry"] as! [String: Any])["subregion"] as! String,
                     population: (requirement["destinationCountry"] as! [String: Any])["population"] as! String,
                     lat: (requirement["destinationCountry"] as! [String: Any])["lat"] as! String,
                     lng: (requirement["destinationCountry"] as! [String: Any])["lng"] as! String,
@@ -468,21 +241,12 @@ class Converter {
                     nearbyCountrySlugs: (requirement["destinationCountry"] as! [String: Any])["nearbyCountrySlugs"] as! String,
                     timeZones: (requirement["destinationCountry"] as! [String: Any])["timeZones"] as! String,
                     formalName: (requirement["destinationCountry"] as! [String: Any])["formalName"] as? String,
-                    isIndependent: isIndependent,
+                    isIndependent: (requirement["destinationCountry"] as! [String: Any])["isIndependent"] as! String,
                     developmentStatus: developmentStatus,
                     languageCodes: (requirement["destinationCountry"] as! [String: Any])["languageCodes"] as! String,
                     languageNames: (requirement["destinationCountry"] as! [String: Any])["languageNames"] as! String,
-                    countryVisaRanking: (requirement["destinationCountry"] as! [String: Any])["countryVisaRanking"] != nil ? CountryVisaRanking(
-                        countryID: ((requirement["destinationCountry"] as! [String: Any])["countryVisaRanking"] as! [String: Any])["countryID"] as! Int,
-                        visaFree: ((requirement["destinationCountry"] as! [String: Any])["countryVisaRanking"] as! [String: Any])["visaFree"] as! Int,
-                        visaOnArrival: ((requirement["destinationCountry"] as! [String: Any])["countryVisaRanking"] as! [String: Any])["visaOnArrival"] as! Int,
-                        eVisa: ((requirement["destinationCountry"] as! [String: Any])["countryVisaRanking"] as! [String: Any])["eVisa"] as! Int,
-                        visaRequired: ((requirement["destinationCountry"] as! [String: Any])["countryVisaRanking"] as! [String: Any])["visaRequired"] as! Int,
-                        visaRefused: ((requirement["destinationCountry"] as! [String: Any])["countryVisaRanking"] as! [String: Any])["visaRefused"] as! Int,
-                        visaUnknown: ((requirement["destinationCountry"] as! [String: Any])["countryVisaRanking"] as! [String: Any])["visaUnknown"] as! Int,
-                        visaEasyTotal: ((requirement["destinationCountry"] as! [String: Any])["countryVisaRanking"] as! [String: Any])["visaEasyTotal"] as! Int
-                        ) : nil ,
-                    visaProcessingURL: (requirement["destinationCountry"] as! [String: Any])["visaProcessingURL"] as? String, createdAt: dateFormatter.date(from: requirement["createdAt"] as! String)!,
+                    visaProcessingURL: (requirement["destinationCountry"] as! [String: Any])["visaProcessingURL"] as? String,
+                    createdAt: dateFormatter.date(from: requirement["createdAt"] as! String)!,
                     updatedAt: dateFormatter.date(from: requirement["updatedAt"] as! String)!,
                     countryTemperature: (requirement["destinationCountry"] as! [String: Any])["countryTemperature"] != nil ? CountryTemperature(
                         id: ((requirement["destinationCountry"] as! [String: Any])["countryTemperature"] as! [String: Any])["id"] as! Int,
@@ -514,53 +278,51 @@ class Converter {
                         createdAt: dateFormatter.date(from: ((requirement["destinationCountry"] as! [String: Any])["travelAdvice"] as! [String: Any])["createdAt"] as! String)!,
                         updatedAt: dateFormatter.date(from: ((requirement["destinationCountry"] as! [String: Any])["travelAdvice"] as! [String: Any])["updatedAt"] as! String)!
                         ) : nil,
-                    visaSlug: (requirement["destinationCountry"] as! [String: Any])["visaSlug"] as? String,
-                    visaSchemeID: (requirement["destinationCountry"] as! [String: Any])["visaSchemeID"] as? Int, parentCountryID: (requirement["destinationCountry"] as! [String: Any])["parentCountryID"] as? Int,
+                    visaSchemeID: (requirement["destinationCountry"] as! [String: Any])["visaSchemeID"] as? Int,
+                    parentCountryID: (requirement["destinationCountry"] as! [String: Any])["parentCountryID"] as? Int,
                     currencySymbol: (requirement["destinationCountry"] as! [String: Any])["currencySymbol"] as? String
-            ),
-                visaCategoryID: requirement["visaCategoryID"] as! Int,
-                visaCategory: VisaCategory(
+                ),
+                visaCategoryID: requirement["visaCategoryID"] as! Int, visaCategory: VisaCategory(
                     id: (requirement["visaCategory"] as! [String: Any])["id"] as! Int,
                     name: name,
                     visaCategoryDescription: (requirement["visaCategory"] as! [String: Any])["visaCategoryDescription"] as! String,
                     updatedAt: dateFormatter.date(from: (requirement["visaCategory"] as! [String: Any])["updatedAt"] as! String)!
                 ),
                 visaSubcategoryID: requirement["visaSubcategoryID"] as! Int,
-                duration: duration,
+                duration: requirement["duration"] as! String,
                 notes: requirement["notes"] as! String,
                 totalVotes: requirement["totalVotes"] as! Int,
                 initialVotes: requirement["initialVotes"] as! Int,
-                flightPrice: requirement["flightPrice"] != nil ?
-                    FlightPrice(
-                        id: (requirement["flightPrice"] as! [String: Any])["id"] as! Int,
-                        originCountryID: (requirement["flightPrice"] as! [String: Any])["originCountryID"] as! Int,
-                        destinationCountryID: (requirement["flightPrice"] as! [String: Any])["destinationCountryID"] as! Int,
-                        minPrice: (requirement["flightPrice"] as! [String: Any])["minPrice"] as! Int,
-                        currency: originCurrencyCode!,
-                        direct: (requirement["flightPrice"] as! [String: Any])["direct"] as! Int,
-                        outboundCarrierIDS: (requirement["flightPrice"] as! [String: Any])["outboundCarrierIDS"] as! String,
-                        outboundCarrierNames: (requirement["flightPrice"] as! [String: Any])["outboundCarrierNames"] as! String,
-                        outboundDate: dateFormatter.date(from: (requirement["flightPrice"] as! [String: Any])["outboundDate"] as! String)!,
-                        inboundCarrierIDS: (requirement["flightPrice"] as! [String: Any])["inboundCarrierIDS"] as! String,
-                        inboundCarrierNames: (requirement["flightPrice"] as! [String: Any])["inboundCarrierNames"] as! String,
-                        inboundDate: dateFormatter.date(from: (requirement["flightPrice"] as! [String: Any])["inboundDate"] as! String)!,
-                        quoteDateTime: dateFormatter.date(from: (requirement["flightPrice"] as! [String: Any])["quoteDateTime"] as! String)!
-                    ) : nil,
                 exchangePrice: requirement["exchangePrice"] != nil ?
-                ExchangePrice(
-                    id: (requirement["exchangePrice"] as! [String: Any])["id"] as! Int,
-                    originCountryID: (requirement["exchangePrice"] as! [String: Any])["originCountryID"] as! Int,
-                    destinationCountryID: (requirement["exchangePrice"] as! [String: Any])["destinationCountryID"] as! Int,
-                    originCurrencyCode: originCurrencyCode!,
-                    destinationCurrencyCode: (requirement["exchangePrice"] as! [String: Any])["destinationCurrencyCode"] as! String,
-                    price: (requirement["exchangePrice"] as! [String: Any])["price"] as! Double,
-                    quoteDateTime: dateFormatter.date(from: (requirement["exchangePrice"] as! [String: Any])["quoteDateTime"] as! String)!
+                    ExchangePrice(
+                        id: (requirement["exchangePrice"] as! [String: Any])["id"] as! Int,
+                        originCountryID: (requirement["exchangePrice"] as! [String: Any])["originCountryID"] as! Int,
+                        destinationCountryID: (requirement["exchangePrice"] as! [String: Any])["destinationCountryID"] as! Int,
+                        originCurrencyCode: ((requirement["exchangePrice"] as! [String: Any])["originCurrencyCode"] as! String),
+                        destinationCurrencyCode: (requirement["exchangePrice"] as! [String: Any])["destinationCurrencyCode"] as! String,
+                        price: (requirement["exchangePrice"] as! [String: Any])["price"] as! Double,
+                        quoteDateTime: dateFormatter.date(from: (requirement["exchangePrice"] as! [String: Any])["quoteDateTime"] as! String)!
                     ) : nil,
                 slug: requirement["slug"] as! String,
                 website: requirement["website"] as! String,
-                visaName: visaName,
+                visaName: requirement["visaName"] as! String,
                 createdAt: dateFormatter.date(from: requirement["createdAt"] as! String)!,
                 updatedAt: dateFormatter.date(from: requirement["updatedAt"] as! String)!,
+                flightPrice: requirement["flightPrice"] != nil ? FlightPrice(
+                    id: (requirement["flightPrice"] as! [String: Any])["id"] as! Int,
+                    originCountryID: (requirement["flightPrice"] as! [String: Any])["originCountryID"] as! Int,
+                    destinationCountryID: (requirement["flightPrice"] as! [String: Any])["destinationCountryID"] as! Int,
+                    minPrice: (requirement["flightPrice"] as! [String: Any])["minPrice"] as! Int,
+                    currency: ((requirement["flightPrice"] as! [String: Any])["currency"] as! String),
+                    direct: (requirement["flightPrice"] as! [String: Any])["direct"] as! Int,
+                    outboundCarrierIDS: (requirement["flightPrice"] as! [String: Any])["outboundCarrierIDS"] as! String,
+                    outboundCarrierNames: (requirement["flightPrice"] as! [String: Any])["outboundCarrierNames"] as! String,
+                    outboundDate: dateFormatter.date(from: (requirement["flightPrice"] as! [String: Any])["outboundDate"] as! String)!,
+                    inboundCarrierIDS: (requirement["flightPrice"] as! [String: Any])["inboundCarrierIDS"] as! String,
+                    inboundCarrierNames: (requirement["flightPrice"] as! [String: Any])["inboundCarrierNames"] as! String,
+                    inboundDate: dateFormatter.date(from: (requirement["flightPrice"] as! [String: Any])["inboundDate"] as! String)!,
+                    quoteDateTime: dateFormatter.date(from: (requirement["flightPrice"] as! [String: Any])["quoteDateTime"] as! String)!
+                ) : nil,
                 visaProcessingAvailable: requirement["visaProcessingAvailable"] as? Int)
             )
         }
@@ -568,6 +330,3 @@ class Converter {
         
     }
 }
-
-
-

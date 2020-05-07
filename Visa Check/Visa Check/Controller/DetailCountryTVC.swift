@@ -35,17 +35,21 @@ class DetailCountryTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
+        
         // MARK:- Configuring
         nameLabel.text = "\(country.destinationCountry.name)"
         visaLabel.text = " \(country.visaCategory.name.rawValue.localized)  "
         capitalLabel.text = country.destinationCountry.capital != nil ? country.destinationCountry.capital : "No information"
-        subregionLabel.text = country.destinationCountry.subregion.rawValue
+        subregionLabel.text = country.destinationCountry.subregion
         populationLabel.text = country.destinationCountry.population
         timeZonesLabel.text = country.destinationCountry.timeZones
         languagesLabel.text = country.destinationCountry.languageNames
-        exchangePriceLabel.text = country.exchangePrice != nil ? "100 \(country.exchangePrice!.originCurrencyCode.rawValue) = \(Double(Int(10000*country.exchangePrice!.price))/100) \(country.exchangePrice!.destinationCurrencyCode)" : "No information"
-        visaDurationLabel.text = country.duration.rawValue
-        priceLabel.text = country.flightPrice != nil ? "\(country.flightPrice!.minPrice) \(country.flightPrice!.currency.rawValue)" : "No info"
+        exchangePriceLabel.text = country.exchangePrice != nil ? "100 \(country.exchangePrice!.originCurrencyCode) = \(Double(Int(10000*country.exchangePrice!.price))/100) \(country.exchangePrice!.destinationCurrencyCode)" : "No information"
+        visaDurationLabel.text = country.duration
+        priceLabel.text = country.flightPrice != nil ? "\(country.flightPrice!.minPrice) \(country.flightPrice!.currency)" : "No info"
         let backView = UIView()
         backView.backgroundColor = .white
         tableView.backgroundView = backView
@@ -63,6 +67,10 @@ class DetailCountryTVC: UITableViewController {
         navigationItem.title = "Country".localized
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "backColor")!]
         tableView.separatorStyle = .none
+        
+        let shareItem = UIBarButtonItem(image: UIImage(named: "share"), style: .plain, target: self, action: #selector(shareBtnPressed))
+        shareItem.tintColor = UIColor(named: "backColor")
+        navigationItem.rightBarButtonItem = shareItem
         
         rateService.showRateAlert()
         
@@ -204,6 +212,43 @@ class DetailCountryTVC: UITableViewController {
             addToFavorites()
         }
         
+    }
+    
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+           if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+               switch swipeGesture.direction {
+               case UISwipeGestureRecognizer.Direction.right:
+                   if tabBarController?.tabBar.selectedItem?.title == "Favorites".localized {
+                       performSegue(withIdentifier: "unwind2", sender: self)
+                   } else {
+                       performSegue(withIdentifier: "unwindToList", sender: self)
+                   }
+               default:
+                   break
+               }
+           }
+       }
+    
+    @objc func shareBtnPressed() {
+        let defaultText = """
+Check this country: \(self.country.destinationCountry.name)
+        
+Capital: \(self.country.destinationCountry.capital ?? "No info")
+Region: \(self.country.destinationCountry.subregion)
+Population: \(self.country.destinationCountry.population)
+Send from Tourist Assistance
+https://itunes.apple.com/app/id1495216078?action=write-review
+"""
+        
+        let activityController: UIActivityViewController
+        
+        if let imgData = countryImageData, let imageToShare = UIImage(data: imgData) {
+            activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+        } else  {
+            activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+        }
+        
+        self.present(activityController, animated: true, completion: nil)
     }
     
 }

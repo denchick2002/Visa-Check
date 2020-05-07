@@ -42,7 +42,7 @@
 "dew-ki-N3F.text" = "Norway";
 
 /* Class = "UILabel"; text = "Insert your passport country"; ObjectID = "gpC-Xk-KwC"; */
-"gpC-Xk-KwC.text" = "Введите Вашу страну";
+"gpC-Xk-KwC.text" = "Введите страну";
 
 /* Class = "UILabel"; text = "Min Flight Price:"; ObjectID = "jU9-vM-VW1"; */
 "jU9-vM-VW1.text" = "Цена Авиарейсов:";

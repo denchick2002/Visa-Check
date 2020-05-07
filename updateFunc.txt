@@ -7,7 +7,7 @@ func update(forCountry country: String) {
                     if let error = error {
                         print(error.localizedDescription)
                     } else if let data = data {
-                        
+                        print("AA")
                         let decoder = JSONDecoder()
                         decoder.dateDecodingStrategy = .iso8601
                         let parsedData = try! decoder.decode(Country.self, from: data)
